@@ -214,6 +214,13 @@ end
 
 %% 4 total energy per unit cell convergence plot
 [emin,emin_loc]=min(min(tepuc_mat));
+elvrst{1}=alst(emin_loc).*bohr;% unit: A
+elvrst{2}=G;% G matrix
+elvrst{3}=S;% structure factor
+elvrst{4}=UpsGG;% pseudopotential
+elvrst{5}=VcoulGG;% coulomb potential matrix
+elvrst{6}=VxcGG;% xc energy matrix
+save(['Ecut_',num2str(2*Ecut),'Rdy_aG.mat'],'elvrst')
 figure % plot
 subplot(1,2,1)
 plot(alst.*bohr.*1e10,min(tepuc_mat),'LineWidth',1.75)
