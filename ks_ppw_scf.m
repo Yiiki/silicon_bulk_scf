@@ -187,7 +187,7 @@ elseif nargin==0 % default parameters
     mix=1;% 10 charge-mixing scheme
     E_cut = 30.5*0.5;% 11 cut-off energy , unit: Hartree 
     kpi = 2;%12 k-points numbers, kpi = 1,2,3,4 ,using 1, 32, 256, 2048 points; 
-    ksop=ks_ppw_solver(a0,Z,blbv,tau_raw,Fn,kpst,oprs,alpha_si,scf_max,mix,E_cut,kpi);
+    ksop=ks_ppw_scf(a0,Z,blbv,tau_raw,Fn,kpst,oprs,alpha_si,scf_max,mix,E_cut,kpi);
     
     [emin,eloc]=min(ksop{end});
     figure % plot
