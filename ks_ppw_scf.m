@@ -1,4 +1,4 @@
-function ksop=ks_ppw_solver(a0,Z,blbv,tau_raw,Fn,kpst,oprs,alpha_si,scf_max,mix,E_cut,kpi)
+function ksop=ks_ppw_scf(a0,Z,blbv,tau_raw,Fn,kpst,oprs,alpha_si,scf_max,mix,E_cut,kpi)
 %*************************************************************************%
 % * title : Kohn-Sham pseudopotential plane wave method with LDA          %
 % * Author : Yii                                                          %
