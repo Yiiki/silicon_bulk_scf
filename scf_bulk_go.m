@@ -31,20 +31,20 @@ kpi = 2;% k-points numbers, kpi = 1,2,3,4 ,using 1, 32, 256, 2048 points;
 
 %% geometry optimization by brute force enumeration
 fprintf('\t Completion: ');
-% showTimeToCompletion;startTime=tic;% showTimeToCompletion
-% load_p=parfor_progress(can);% parfor_progress
-tic
+showTimeToCompletion;startTime=tic;% showTimeToCompletion
+load_p=parfor_progress(can);% parfor_progress
+
 parfor i_alst = 1: can % geometry optimization by brute force enumeration
-    disp(i_alst);
+    % disp(i_alst);
 a0=alst(i_alst);% conventional cell size, unit: bohr
 ksop=ks_ppw_solver(a0,Z,blbv,tau_raw,Fn,kpst,oprs,alpha_si,scf_max,mix,...
     E_cut,kpi);% ksop={G, S, UpsGG, VcoulGG, VxcGG, rhG_new, tepuc}
 tepuc_mat(:,i_alst)=ksop{end};% E_total per unit cell
 %---------5.3--------has------been------done------above-------------------%
-% load_p=parfor_progress;% update counting index
-% showTimeToCompletion(load_p/100,[],[],startTime);% update expectation
+load_p=parfor_progress;% update counting index
+showTimeToCompletion(load_p/100,[],[],startTime);% update expectation
 end
-toc
+
 
 % output config
 [emin,emin_loc]=min(min(tepuc_mat));
