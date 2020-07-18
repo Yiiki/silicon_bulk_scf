@@ -49,7 +49,7 @@ end
 % output config
 [emin,emin_loc]=min(min(tepuc_mat));
 ap=alst(emin_loc);
-ksbt=ks_ppw_solver(ap,Z,blbv,tau_raw,Fn,kpst,oprs,alpha_si,scf_max,mix,...
+ksbt=ks_ppw_scf(ap,Z,blbv,tau_raw,Fn,kpst,oprs,alpha_si,scf_max,mix,...
     E_cut,kpi);% ksbt={G, S, UpsGG, VcoulGG, VxcGG, rhG_new, tepuc}
 gomi{1}=ap;% a0 unit: bohr
 gomi{2}=ksbt{1};% G matrix
